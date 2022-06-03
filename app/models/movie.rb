@@ -2,7 +2,7 @@ class Movie < ActiveRecord::Base
 
     def self.create_with_title(title)
         m = Movie.new
-        m[:title] = title
+        m.title = title
         m.save
     end
 
@@ -15,7 +15,7 @@ class Movie < ActiveRecord::Base
     end
 
     def self.movie_count
-        Movie.last.id
+        Movie.count
     end
 
     def self.find_movie_with_id(id)
